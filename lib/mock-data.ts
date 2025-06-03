@@ -28,6 +28,181 @@ export const mockData = {
     },
   },
   feed: [
+    // Major UFC Fight Card
+    {
+      type: "fight_card",
+      eventId: "ufc_299",
+      promotion: "UFC",
+      title: "UFC 299: Redemption",
+      date: "2025-07-12",
+      time: "22:00",
+      venue: "T-Mobile Arena, Las Vegas",
+      mainEvent: {
+        fighter1: {
+          name: 'Jon "Bones" Jones',
+          record: "27-1-0",
+          weightClass: "Heavyweight",
+          country: "USA",
+          image: "/images/ufc-champion.jpeg",
+        },
+        fighter2: {
+          name: 'Tom "Tsunami" Aspinall',
+          record: "14-3-0",
+          weightClass: "Heavyweight",
+          country: "UK",
+          image: "/images/mma-fighter.jpeg",
+        },
+        title: "UFC Heavyweight Championship",
+        rounds: 5,
+      },
+      coMainEvent: {
+        fighter1: {
+          name: 'Alex "Poatan" Pereira',
+          record: "9-2-0",
+          weightClass: "Light Heavyweight",
+          country: "Brazil",
+        },
+        fighter2: {
+          name: "Magomed Ankalaev",
+          record: "18-1-1",
+          weightClass: "Light Heavyweight",
+          country: "Russia",
+        },
+        title: "Light Heavyweight Title Eliminator",
+      },
+      undercard: [
+        {
+          fighter1: "Sean O'Malley",
+          fighter2: "Merab Dvalishvili",
+          weightClass: "Bantamweight",
+        },
+        {
+          fighter1: "Belal Muhammad",
+          fighter2: "Shavkat Rakhmonov",
+          weightClass: "Welterweight",
+        },
+      ],
+      ppvPrice: 79.99,
+      ticketPrices: {
+        nosebleeds: 150,
+        lower: 350,
+        floor: 750,
+        cageside: 1500,
+      },
+      bannerImageUrl: "/images/mayweather-pacquiao.webp",
+      likes: 2847,
+      comments: 156,
+      shares: 89,
+    },
+
+    // Boxing Match
+    {
+      type: "fight_card",
+      eventId: "boxing_showdown",
+      promotion: "Top Rank Boxing",
+      title: "Undisputed Championship",
+      date: "2025-07-19",
+      time: "21:00",
+      venue: "Madison Square Garden, New York",
+      mainEvent: {
+        fighter1: {
+          name: 'Gervonta "Tank" Davis',
+          record: "29-0-0",
+          weightClass: "Lightweight",
+          country: "USA",
+          image: "/images/garcia-boxing.jpeg",
+        },
+        fighter2: {
+          name: 'Ryan "King Ry" Garcia',
+          record: "24-1-0",
+          weightClass: "Lightweight",
+          country: "USA",
+          image: "/images/boxer-mouthguard.webp",
+        },
+        title: "WBA Lightweight Championship",
+        rounds: 12,
+      },
+      coMainEvent: {
+        fighter1: {
+          name: "Shakur Stevenson",
+          record: "21-0-0",
+          weightClass: "Super Featherweight",
+          country: "USA",
+        },
+        fighter2: {
+          name: "Vasiliy Lomachenko",
+          record: "17-3-0",
+          weightClass: "Super Featherweight",
+          country: "Ukraine",
+        },
+        title: "WBC Super Featherweight Title",
+      },
+      ppvPrice: 69.99,
+      ticketPrices: {
+        upper: 85,
+        lower: 200,
+        ringside: 500,
+        vip: 1000,
+      },
+      bannerImageUrl: "/images/boxing-match.webp",
+      likes: 1923,
+      comments: 234,
+      shares: 67,
+    },
+
+    // Local MMA Event
+    {
+      type: "fight_card",
+      eventId: "one_championship",
+      promotion: "ONE Championship",
+      title: "ONE 168: Dynasty",
+      date: "2025-07-05",
+      time: "20:00",
+      venue: "Singapore Indoor Stadium",
+      mainEvent: {
+        fighter1: {
+          name: "Anatoly Malykhin",
+          record: "13-0-0",
+          weightClass: "Heavyweight",
+          country: "Russia",
+        },
+        fighter2: {
+          name: "Arjan Bhullar",
+          record: "11-1-0",
+          weightClass: "Heavyweight",
+          country: "Canada",
+        },
+        title: "ONE Heavyweight Championship",
+        rounds: 5,
+      },
+      coMainEvent: {
+        fighter1: {
+          name: "Stamp Fairtex",
+          record: "9-2-0",
+          weightClass: "Atomweight",
+          country: "Thailand",
+        },
+        fighter2: {
+          name: "Denice Zamboanga",
+          record: "10-2-0",
+          weightClass: "Atomweight",
+          country: "Philippines",
+        },
+        title: "Women's Atomweight Title",
+      },
+      ticketPrices: {
+        general: 45,
+        premium: 120,
+        vip: 300,
+        ringside: 600,
+      },
+      bannerImageUrl: "/images/arm-wrestling.webp",
+      likes: 892,
+      comments: 78,
+      shares: 23,
+    },
+
+    // Training Video
     {
       type: "video",
       videoUrl: "https://example.com/mock/spar_alexhighlight.mp4",
@@ -35,38 +210,91 @@ export const mockData = {
       elo: 1325,
       tier: "Silver",
       stats: { power: 68, defense: 54, accuracy: 72 },
-      description: "Alex's top combo from yesterday's spar.",
+      description: "Training for my upcoming amateur bout! 💪",
       likes: 248,
       comments: 16,
     },
+
+    // Boxing News
+    {
+      type: "news",
+      newsId: "boxing_news_001",
+      headline: "Canelo Alvarez Announces Return Date",
+      summary: "The undisputed super middleweight champion confirms his next fight for September 2025",
+      source: "ESPN Boxing",
+      publishedAt: "2025-06-28",
+      category: "Boxing",
+      image: "/images/boxing-match-background.webp",
+      likes: 567,
+      comments: 89,
+    },
+
+    // Regional Event
     {
       type: "event",
-      eventId: "event_001",
-      title: "Saturday Night Boxing Showdown",
-      date: "2025-07-12",
+      eventId: "regional_001",
+      title: "Golden Gloves Regional Finals",
+      date: "2025-07-08",
       time: "19:00",
-      location: "Dragon Fury MMA Arena",
+      location: "Metro Convention Center",
       price: 25.0,
-      tiers: ["General Admission", "VIP Ringside"],
-      bannerImageUrl: "https://example.com/mock/event_banner_boxing.png",
+      isFree: false,
+      category: "Amateur Boxing",
+      description: "The best amateur boxers compete for regional titles",
+      bannerImageUrl: "/images/garcia-boxing.jpeg",
+      spotsAvailable: 150,
     },
+
+    // MMA News
     {
-      type: "video",
-      videoUrl: "https://example.com/mock/spar_maria.mp4",
-      fighterName: 'Maria "The Dragon" Lopez',
-      elo: 1580,
-      tier: "Gold",
-      stats: { power: 82, defense: 61, accuracy: 78 },
-      description: "Maria's defensive masterclass.",
-      likes: 512,
-      comments: 42,
+      type: "news",
+      newsId: "mma_news_001",
+      headline: "UFC Announces New Weight Class Division",
+      summary: "The promotion reveals plans for a new 165lb division starting in 2026",
+      source: "MMA Junkie",
+      publishedAt: "2025-06-27",
+      category: "MMA",
+      image: "/images/mma-cage-background.webp",
+      likes: 1234,
+      comments: 203,
     },
+
+    // Announcement
     {
       type: "announcement",
-      text: "Coach Luis hosting a free boxing pad-work workshop on 2025-07-07. RSVP now!",
+      text: "🥊 New sparring partners available in your area! Check out the Find Spar section to connect with local fighters.",
       datePosted: "2025-06-30",
     },
   ],
+
+  // Upcoming major events for quick access
+  upcomingEvents: [
+    {
+      eventId: "ufc_300",
+      title: "UFC 300: Milestone",
+      date: "2025-08-15",
+      mainEvent: "Jones vs Aspinall",
+      venue: "Las Vegas",
+      daysUntil: 45,
+    },
+    {
+      eventId: "canelo_fight",
+      title: "Canelo vs Benavidez",
+      date: "2025-09-14",
+      mainEvent: "Undisputed Super MW",
+      venue: "Mexico City",
+      daysUntil: 75,
+    },
+    {
+      eventId: "fury_usyk_3",
+      title: "Fury vs Usyk III",
+      date: "2025-12-21",
+      mainEvent: "Heavyweight Unification",
+      venue: "Riyadh",
+      daysUntil: 173,
+    },
+  ],
+
   fighters: [
     {
       fighterId: "fighter_002",
